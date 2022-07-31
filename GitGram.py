@@ -333,5 +333,5 @@ def deldog(data):
 
 if __name__ == "__main__":
     # We can't use port 80 due to the root access requirement.
-    port = int(environ.get("PORT", 8080))
+    port = config.PORT or int(environ.get("PORT", 8080))
     server.run(host="0.0.0.0", port=port)
